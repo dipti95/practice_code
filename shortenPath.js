@@ -21,6 +21,3 @@ function shortenPath(path){
     if(stack.length === 1 && stack[0] === '') return '/'
     return stack.join('/')
 }
-
-let path = 'foo/../../test/../test/../foo/bar/./baz';
-console.log(shortenPath(path))
