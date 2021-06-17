@@ -17,5 +17,5 @@ function insertPopEle(stack , ele){
 
 }
 
-let stack = [-5, 2, -2, 4, 3, 1]
-console.log(sortStack(stack))
+// let stack = [-5, 2, -2, 4, 3, 1]
+// console.log(sortStack(stack))

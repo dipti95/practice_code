@@ -8,6 +8,7 @@ function balanceBracket(string){
         ']':'[' 
     }
     for(let i = 0; i < string.length; i++){
+        //we can use .includes method instead of indexOf()
         if(openBracket.indexOf(string[i]) !== -1) stack.push(string[i]);
         else if(closeBracket.indexOf(string[i]) !== -1){
             if(stack.length === 0) return false;
@@ -18,5 +19,5 @@ function balanceBracket(string){
     return stack.length === 0
 }
 
-let string = "([])(){}(())()()"
-console.log(balanceBracket(string))
+// let string = "([])(){}(())()()"
+// console.log(balanceBracket(string))
