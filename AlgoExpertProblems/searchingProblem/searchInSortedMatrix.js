@@ -8,6 +8,12 @@ function searchInSortedMatrix(matrix,target){
     }
     return [-1,-1]
 }
+// we choose this method because in question it is given that the each row and each 
+// column in matrix is in the sorted form 
+
+
+
+// otherwise we have to solve by nested loop 
 
 // let matrix = [
 //     [1, 4, 7, 12, 15, 1000],
