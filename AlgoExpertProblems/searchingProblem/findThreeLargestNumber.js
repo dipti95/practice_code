@@ -18,5 +18,5 @@ function shift(array, ele, idx){
     }
 }
 
-let array = [141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7];
-console.log(threeLargestNumber(array))
+// let array = [141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7];
+// console.log(threeLargestNumber(array))
