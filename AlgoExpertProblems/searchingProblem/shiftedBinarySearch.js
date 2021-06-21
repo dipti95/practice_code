@@ -11,12 +11,12 @@ function shiftedBinarySearchHelper(array, target, left, right) {
 
         else if(array[middle] > array[left]){
             if(target < array[middle] && target >= array[left]){
-                return shiftedBinarySearchHelper(array, target , left, middle -1)
-            }else return shiftedBinarySearchHelper(array, target, middle+1, right);
+                right = middle -1
+            }else left = middle+1;
         }else {
             if(target > array[middle] && target <= array[right]){
-                return shiftedBinarySearchHelper(array ,target, middle+1, right);
-            }else return shiftedBinarySearchHelper(array, target, left, middle -1)
+                left = middle+1
+            }else right = middle -1
         }
     }
     
