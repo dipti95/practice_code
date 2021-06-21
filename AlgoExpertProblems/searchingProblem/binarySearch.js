@@ -7,9 +7,9 @@ function binarySearchHelper(array, target , left , right){
        let middle = Math.floor((left + right)/2);
        if(array[middle] === target) return middle
        else if(array[middle] > target){
-           return binarySearchHelper(array , target, left , middle -1);
+           right = middle -1
        }else {
-           return binarySearchHelper(array, target , middle + 1, right)
+           left = middle + 1
        }
    }
        return -1
