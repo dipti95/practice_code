@@ -8,7 +8,7 @@ function increasingTripletSubsequence(nums) {
     }
     return false;
 }
-
+// another way 
 
 function increasingTripletSubsequence(nums) {
     let min = nums[0];
@@ -26,5 +26,5 @@ function increasingTripletSubsequence(nums) {
 }
 
 
-let nums = [20, 100, 10, 12, 5, 13]
-console.log(increasingTripletSubsequence(nums))
+// let nums = [20, 100, 10, 12, 5, 13]
+// console.log(increasingTripletSubsequence(nums))
