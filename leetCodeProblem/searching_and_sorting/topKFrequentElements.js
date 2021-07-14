@@ -44,7 +44,7 @@ function swap(i, j, array) {
     array[j] = ele
 }
 
-let nums = [1, 1, 1, 2, 2, 3]
-let k = 2
+// let nums = [1, 1, 1, 2, 2, 3]
+// let k = 2
 
-console.log(topFrequent(nums, k))
+// console.log(topFrequent(nums, k))
