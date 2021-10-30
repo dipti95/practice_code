@@ -21,3 +21,11 @@ function searchTarget(nums, target) {
 // let nums = [4, 5, 6, 7, 0, 1, 2];
 // let target = 3;
 // console.log(searchTarget(nums, target));
+
+// Another but 0(n* n) time complexity
+function search(nums, target) {
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] === target) return i;
+  }
+  return -1;
+}
