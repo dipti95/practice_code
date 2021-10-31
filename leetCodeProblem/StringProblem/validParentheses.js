@@ -1,4 +1,5 @@
 // Valid parenthesis
+// Author Dipti Yadav
 function validParen(str) {
   let openParen = "({[";
   //let closeParen = ")}]";
@@ -20,4 +21,5 @@ function validParen(str) {
   if (stack.length === 0) return true;
   else return false;
 }
+//
 //
