@@ -1,6 +1,6 @@
 function validParen(str) {
   let openParen = "({[";
-  let closeParen = ")}]";
+  //let closeParen = ")}]";
   let hash = {
     ")": "(",
     "}": "{",
@@ -19,3 +19,4 @@ function validParen(str) {
   if (stack.length === 0) return true;
   else return false;
 }
+//
