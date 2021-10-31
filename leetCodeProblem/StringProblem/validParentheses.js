@@ -1,3 +1,4 @@
+// Valid parenthesis
 function validParen(str) {
   let openParen = "({[";
   //let closeParen = ")}]";
