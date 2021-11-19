@@ -10,3 +10,11 @@ function hammingDistance(x, y) {
 
   return counter;
 }
+
+// one line solution;
+function hammingDistance(x, y) {
+  return Number(x ^ y)
+    .toString(2)
+    .split("")
+    .reduce((a, b) => +a + +b);
+}
