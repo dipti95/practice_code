@@ -1,3 +1,11 @@
+/** 
+Inorder: <LEFT><ROOT><RIGHT>, 
+postorder: <LEFT><RIGHT><ROOT>
+The LAST ELEMENT of POSTORDER will always be the ROOT of a subtree. 
+We can furter determine its left and right subtree 
+by finding its position in the inorder array.
+*/
+
 function buildTree(inorder, postorder) {
   let hash = {};
   for (let i = 0; i < inorder.length; i++) hash[inorder[i]] = i;
