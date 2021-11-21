@@ -10,7 +10,8 @@ function hammingDistance(x, y) {
 
   return counter;
 }
-
+// ^ XOR reference
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_XOR
 // one line solution;
 function hammingDistance(x, y) {
   return Number(x ^ y)
