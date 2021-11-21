@@ -1,4 +1,4 @@
-var buildTree = function (inorder, postorder) {
+function buildTree(inorder, postorder) {
   let hash = {};
   for (let i = 0; i < inorder.length; i++) hash[inorder[i]] = i;
 
@@ -13,4 +13,4 @@ var buildTree = function (inorder, postorder) {
   }
 
   return recur(0, inorder.length - 1);
-};
+}
