@@ -31,6 +31,10 @@ SO IF WE WANT TO KNOW THE INDEX OF NODE AND THERE CHILDREN THEN THE FORMULA IS :
        then, CHILD ONE => 2i +1;
        and CHILD TWO =>2i +2
 
+
+       PARENT NODE => Math.floor((i -1)/2);
+       i=> current index;
+
                  
                  
 */
