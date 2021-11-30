@@ -1,4 +1,4 @@
-class MinHeap {
+class MaxHeap {
   constructor(array) {
     this.heap = this.buildHeap(array);
   }
@@ -20,11 +20,11 @@ class MinHeap {
       let secondChildIdx =
         2 * currentIdx + 2 <= endIdx ? 2 * currentIdx + 2 : -1;
       let swapIdx = 0;
-      if (currentIdx != -1 && heap[secondChildIdx] < heap[firstChidIdx]) {
+      if (currentIdx != -1 && heap[secondChildIdx] > heap[firstChidIdx]) {
         swapIdx = secondChildIdx;
       } else swapIdx = firstChidIdx;
 
-      if (heap[swapIdx] < heap[currentIdx]) {
+      if (heap[swapIdx] > heap[currentIdx]) {
         swap(currentIdx, swapIdx, heap);
         currentIdx = swapIdx;
         firstChidIdx = currentIdx * 2 + 1;
@@ -34,7 +34,7 @@ class MinHeap {
 
   siftUp(currentIdx, heap) {
     let parentIdx = Math.floor((currentIdx - 1) / 2);
-    while (currentIdx > 0 && heap[currentIdx] < heap[parentIdx]) {
+    while (currentIdx > 0 && heap[currentIdx] > heap[parentIdx]) {
       swap(currentIdx, parentIdx, heap);
       currentIdx = parentIdx;
       parentIdx = Math.floor((currentIdx - 1) / 2);
@@ -65,22 +65,22 @@ function swap(i, j, arr) {
   arr[j] = ele;
 }
 
-let minHeap = new MinHeap([]);
+let maxHeap = new MaxHeap([]);
 
-minHeap.insert(3);
-minHeap.insert(1);
-minHeap.insert(2);
-// [1,3,2]
-console.log(minHeap);
-// 1
-console.log(minHeap.peek());
-// 1
-console.log(minHeap.remove());
-//2
-console.log(minHeap.remove());
+maxHeap.insert(3);
+maxHeap.insert(1);
+maxHeap.insert(2);
+// [3,2,1]
+console.log(maxHeap);
 // 3
-console.log(minHeap.remove());
-minHeap.insert(4);
-minHeap.insert(5);
-// [4,5]
-console.log(minHeap);
+console.log(maxHeap.peek());
+// 3
+console.log(maxHeap.remove());
+//2
+console.log(maxHeap.remove());
+// 1
+console.log(maxHeap.remove());
+maxHeap.insert(4);
+maxHeap.insert(5);
+// [5,4]
+console.log(maxHeap);
