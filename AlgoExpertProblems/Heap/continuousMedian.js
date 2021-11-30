@@ -34,8 +34,11 @@ class ContinuousMedianHandler {
   }
 }
 
+// Heap construction
 class ConstructHeap {
   constructor(heapType, array) {
+    // heapType is function by which we would find the type of heap min & max
+
     this.heapType = heapType;
     this.heap = this.buildHeap(array);
     this.length = this.heap.length;
@@ -112,10 +115,12 @@ function swap(i, j, arr) {
   arr[j] = ele;
 }
 
+// higher half  => min heap
 function MinHeap(a, b) {
   return a < b;
 }
 
+// Lower half => max heap
 function MaxHeap(a, b) {
   return a > b;
 }
