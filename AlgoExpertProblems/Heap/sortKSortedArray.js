@@ -9,16 +9,17 @@ index 0   1   2   3   4   5   6   7
 
 So, hear in example heap is from 0 to k+1(4)
   with the help of  Minheap construction 
-  value of heap =[1,2,3,5]
-  MIN HEAP PROPERTY => ROOT NODE would be SMALLEST value of Heap;
+  value of heap wolud be => [1,2,3,5]
+  *****MIN HEAP PROPERTY => ROOT NODE would be SMALLEST value of Heap*****
   That's why after for loop first action is to remove the lowestvalue in the heap 
-  IN MIN HEAP  CONSTRUCTION  REMOVE METHOD REMOVE THE ROOT VALUE OF HEAP;
+  IN MIN HEAP  CONSTRUCTION  REMOVE METHOD REMOVES THE ROOT VALUE OF HEAP;
 
  */
   let nextIdx = 0;
 
   /*  With the help of above comments now it is understandable that why  we are taking i = k+1
   because after removing the value and set that remove value  to the nextIdx (which i define above In the start nextIdx is always zero)of array 
+  we have to insert the next value and hear it is k+1 upto array.length-1 
    */
 
   for (let i = k + 1; i < array.length; i++) {
@@ -27,8 +28,8 @@ So, hear in example heap is from 0 to k+1(4)
     nextIdx += 1;
 
     let currentElement = array[i];
-    /**  In the first iteration i= k+1  so we look to the given array => array[k+1] => 4
-       SO, hear we are inserting the values from k+1 to the length of the array
+    /**  In the first iteration i= k+1  so if  we look to the given array => array[k+1] is 4
+       SO, hear we are inserting the values from  k+1 index to the length of the array 
       */
     heap.insert(currentElement);
   }
