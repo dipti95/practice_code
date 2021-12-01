@@ -42,3 +42,41 @@ function rob(nums) {
   }
   return maxAtOneBefore;
 }
+
+/**
+ Example 2: nums = [1, 3, 1, 3, 1]
+
+
+ let maxAtTwoBefore = nums[0]; 1
+
+         3                    1         3
+ let maxAtOneBefore = Math.max(nums[0], nums[1]);
+
+ for (let i = 2; i < nums.length; i++) {
+   interation 1 
+
+                3                  nums[2] = 1 + 1 = 2              3
+     const maxAtCurrent = Math.max(nums[i] + maxAtTwoBefore, maxAtOneBefore);
+
+    maxAtTwoBefore = maxAtOneBefore;  3
+     maxAtOneBefore = maxAtCurrent;   3
+
+   interation 2
+
+              6                  nums[3] = 3 + 3 = 6              3
+     const maxAtCurrent = Math.max(nums[i] + maxAtTwoBefore, maxAtOneBefore);
+
+     maxAtTwoBefore = maxAtOneBefore;   3
+    maxAtOneBefore = maxAtCurrent;   6
+
+  interation 3
+
+                6                  nums[4] = 1 + 3 = 4              6
+     const maxAtCurrent = Math.max(nums[i] + maxAtTwoBefore, maxAtOneBefore);
+
+     maxAtTwoBefore = maxAtOneBefore;  6
+     maxAtOneBefore = maxAtCurrent;  6
+ }
+
+return maxAtOneBefore;
+ */
