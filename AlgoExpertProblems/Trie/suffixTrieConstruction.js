@@ -19,4 +19,12 @@ class suffixTrie {
     }
     obj[this.endSymbol] = true;
   }
+  contains(string) {
+    let obj = this.root;
+    for (let ele of string) {
+      if (!(ele in obj)) return false;
+      obj = obj[ele];
+    }
+    return this.endSymbol in obj;
+  }
 }
