@@ -7,7 +7,7 @@ class suffixTrie {
 
   populateSuffixTrieFrom(string) {
     for (let i = 0; i < string.length; i++) {
-      insertString(string.slice(i));
+      this.insertString(string.slice(i));
     }
   }
 
