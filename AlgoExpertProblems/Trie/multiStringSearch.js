@@ -1,12 +1,16 @@
 function multiStringSearch(bigString, smallStrings) {
   let trie = new suffixTrie(bigString);
 
-  for (let i = 0; i < smallStrings.length; i++) {
-    if (trie.contains(smallStrings[i])) {
-      smallStrings[i] = true;
-    } else smallStrings[i] = false;
-  }
-  return smallStrings;
+  //   for (let i = 0; i < smallStrings.length; i++) {
+  //     if (trie.contains(smallStrings[i])) {
+  //       smallStrings[i] = true;
+  //     } else smallStrings[i] = false;
+  //   }
+  //   return smallStrings;
+
+  // ***** simple way of doing this above commented step
+
+  return smallStrings.map((string) => trie.contains(string));
 }
 
 class suffixTrie {
