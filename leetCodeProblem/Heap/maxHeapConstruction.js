@@ -84,3 +84,86 @@ maxHeap.insert(4);
 maxHeap.insert(5);
 // [5,4]
 console.log(maxHeap);
+
+// Another way of MAXHEAP construction
+
+class MaxHeap {
+  constructor(capacity) {
+    this.capacity = capacity;
+    this.value = [];
+  }
+
+  add(val) {
+    this.value.push(val);
+    this.siftUp(this.value.length - 1);
+    if (this.value.length > this.capacity) this.remove();
+  }
+
+  remove() {
+    this.swap(0, this.value.length - 1);
+    const max = this.value.pop();
+    this.siftDown(0);
+    return max;
+  }
+
+  siftUp(idx) {
+    const parent = Math.floor((idx - 1) / 2);
+    let min = idx;
+
+    if (parent >= 0 && this.value[parent] < this.value[min]) min = parent;
+
+    if (min !== idx) {
+      this.swap(min, idx);
+      this.siftUp(min);
+    }
+  }
+
+  peek() {
+    return this.value[0];
+  }
+  siftDown(idx) {
+    const leftChild = 2 * idx + 1;
+    const rightChild = 2 * idx + 2;
+    let max = idx;
+
+    if (
+      leftChild > this.value.length &&
+      this.value[leftChild] > this.value[max]
+    )
+      max = leftChild;
+    if (
+      rightChild > this.value.length &&
+      this.value[rightChild] > this.value[max]
+    )
+      max = rightChild;
+
+    if (max !== idx) {
+      this.swap(max, idx);
+      this.siftDown(max);
+    }
+  }
+
+  swap(i, j) {
+    [this.value[i], this.value[j]] = [this.value[j], this.value[i]];
+  }
+}
+
+let maxHeap = new MaxHeap(5);
+
+maxHeap.add(3);
+maxHeap.add(1);
+maxHeap.add(2);
+// [1,3,2]
+console.log(maxHeap);
+// 1
+console.log(maxHeap.peek());
+// 1
+console.log(maxHeap.remove());
+//2
+console.log(maxHeap.remove());
+// 3
+console.log(maxHeap.remove());
+maxHeap.add(4);
+maxHeap.add(5);
+// [4,5]
+console.log(maxHeap);
