@@ -89,3 +89,35 @@ class MinHeap {
     arr[i] = ele;
   }
 }
+
+// Another solution to solve thos problem
+
+function mergeSortedArrays(arrays) {
+  let elementIdx = new Array(arrays.length).fill(0);
+
+  let resultArr = [];
+  while (true) {
+    let smallestItem = [];
+    for (let i = 0; i < arrays.length; i++) {
+      let subArr = arrays[i];
+      let eleIdx = elementIdx[i];
+      if (eleIdx === subArr.length) continue;
+      smallestItem.push({ i, num: subArr[eleIdx] });
+    }
+    if (smallestItem.length === 0) break;
+    const nextItem = getMinValue(smallestItem);
+    resultArr.push(nextItem.num);
+    elementIdx[nextItem.i]++;
+  }
+
+  return resultArr;
+}
+
+function getMinValue(arr) {
+  let minIdx = 0;
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i].num < arr[minIdx].num) minIdx = i;
+  }
+
+  return arr[minIdx];
+}
