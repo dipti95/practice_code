@@ -1,3 +1,7 @@
+/**  Each time you can either climb 1 or 2 steps. 
+ In how many distinct ways can you climb to the top? */
+
+// dp
 function climbingStairs(n) {
   let arr = new Array(n).fill(0);
   arr[0] = 0;
