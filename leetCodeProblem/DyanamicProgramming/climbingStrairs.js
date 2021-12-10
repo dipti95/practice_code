@@ -13,3 +13,14 @@ function climbingStairs(n) {
   }
   return arr[n];
 }
+
+// another way
+const climbStairs = (n) => {
+  let first = 1;
+  let second = 2;
+  while (--n) {
+    second = first + second;
+    first = second - first;
+  }
+  return first;
+};
