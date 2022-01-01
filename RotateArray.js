@@ -24,6 +24,6 @@ const reverse = (arr, start, end) => {
 function rotate(nums, k) {
   let front = nums.slice(-k);
   let end = nums.slice(0, -k);
-  console.log(front.concat(end));
+  // console.log(front.concat(end));
   return front.concat(end);
 }
