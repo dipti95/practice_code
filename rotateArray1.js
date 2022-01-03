@@ -1,4 +1,4 @@
-function rotateArray(originalArray, rotateNum) {
+const = rotateArray=(originalArray, rotateNum)=>{
   let result = [];
   if (rotateNum > 0) {
     for (
