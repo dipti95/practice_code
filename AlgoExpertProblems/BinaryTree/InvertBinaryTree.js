@@ -12,7 +12,9 @@ function invertBinaryTree(tree) {
     let currentVal = queue.shift();
     let left = currentVal.left;
     let right = currentVal.right;
+    if (currentVal === null) continue;
     swap(currentVal);
+
     queue.push(left);
     queue.push(right);
   }
