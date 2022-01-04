@@ -1,4 +1,4 @@
-const = rotateArray=(originalArray, rotateNum)=>{
+const rotateArray = (originalArray, rotateNum) => {
   let result = [];
   if (rotateNum > 0) {
     for (
@@ -15,4 +15,4 @@ const = rotateArray=(originalArray, rotateNum)=>{
     for (let i = 0; i < -rotateNum; i++) result.push(originalArray[i]);
   }
   return result;
-}
+};
