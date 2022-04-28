@@ -28,18 +28,27 @@ class LinkedList {
       value: value,
       next: null,
     }
-    if (this.length === 1) {
-      this.head.next = node
-      this.tail = node
-      this.length++
-    } else {
-      this.tail.next = node
-      this.tail = node
-      this.length++
-    }
+
+    // ----------------
+    //NO NEED TO DO EXTRA STEP
+    // if (this.length === 1) {
+    //   this.head.next = node
+    //   this.tail = node
+    //   this.length++
+    // } else {
+    //   this.tail.next = node
+    //   this.tail = node
+    //   this.length++
+    // }
+    this.tail.next = node
+    this.tail = node
+    this.length++
+    return this
   }
 }
 
-let myLinkedList = new LinkedList(10)
-myLinkedList.append(5)
-myLinkedList.append(16)
+// let myLinkedList = new LinkedList(10)
+// myLinkedList.append(5)
+// console.log(myLinkedList)
+// myLinkedList.append(16)
+// console.log(myLinkedList)
