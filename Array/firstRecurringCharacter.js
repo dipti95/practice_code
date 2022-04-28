@@ -9,6 +9,17 @@
 //It should return undefined
 
 function firstRecurringCharacter(input) {
+  let arr = []
+  for (const ele of input) {
+    if (!arr.includes(ele)) arr.push(ele)
+    else return ele
+  }
+  return undefined
+}
+
+// ------------------------------
+
+function firstRecurringCharacter(input) {
   let hash = {}
   for (const ele of input) {
     if (ele in hash) return ele
