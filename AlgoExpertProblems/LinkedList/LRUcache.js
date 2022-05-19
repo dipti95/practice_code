@@ -1,13 +1,48 @@
 class LRUCache {
   constructor(maxSize) {
     this.maxSize = maxSize || 1
+    this.list = new LinkedList()
+    this.count = 0
+    this.obj = {}
   }
 
-  insertKeyValuePair(key, value) {}
+  insertKeyValuePair(key, value) {
+    if (key in this.obj) {
+      this.replaceKey(key, value)
+    } else {
+      if (this.count === this.maxSize) {
+        this.evictLeastUsed()
+      } else {
+        this.count++
+      }
+      this.obj[key] = new LinkedListNode(key, value)
+    }
+    this.updateMostRecent(this.obj[key])
+  }
 
-  getValueFromKey(key) {}
+  getValueFromKey(key) {
+    if (key in this.obj) {
+      this.updateMostRecent(this.obj[key])
+      return this.obj[key].value
+    }
+    return null
+  }
 
-  getMostRecentKey() {}
+  getMostRecentKey() {
+    return this.list.head.key
+  }
+
+  replaceKey(key, value) {
+    this.obj[key].value = value
+  }
+  evictLeastUsed() {
+    let key = this.list.tail.key
+    this.list.removeTail()
+    delete this.obj[key]
+  }
+  updateMostRecent(value) {
+    this.list.setHead(value)
+  }
 }
 
 class LinkedList {
@@ -18,9 +53,11 @@ class LinkedList {
   setHead(node) {
     if (this.head === null) {
       this.head = node
-    } else if (this.head === node) return
-    else if (this.head === this.tail) {
-      this.head.prev = node
+      this.tail = node
+    } else if (this.head === node) {
+      return
+    } else if (this.head === this.tail) {
+      this.tail.prev = node
       this.head = node
       this.head.next = this.tail
     } else {
@@ -34,6 +71,17 @@ class LinkedList {
       node.next = this.head
       this.head = node
     }
+  }
+
+  removeTail(node) {
+    if (this.tail === null) return
+    if (this.tail === this.head) {
+      this.tail = null
+      this.head = null
+      return
+    }
+    this.tail = this.tail.prev
+    this.tail.next = null
   }
 }
 
