@@ -7,7 +7,7 @@ class BST {
 }
 
 // preOrderTraversalValues is a array => root - left - right
-
+// time complexity O(n^2)  n is for recursive call and other n is for finding the rightIdx in preOrderTraversalValues
 function reconstructBst(preOrderTraversalValues) {
   // base case for recursive call
   if (!preOrderTraversalValues.length) return null
