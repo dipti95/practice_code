@@ -12,3 +12,8 @@ function getConcatenation(nums: number[]): number[] {
 
   return ans
 }
+
+// we can do by using spread operator
+function getConcatenation(nums: number[]): number[] {
+  return [...nums, ...nums]
+}
