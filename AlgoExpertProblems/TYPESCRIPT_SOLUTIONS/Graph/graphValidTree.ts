@@ -25,6 +25,8 @@ function dfs(
   visited: Array<number>,
   adjacent: Obj
 ): boolean {
+  // visited.includes(node) have time complexity of 0(n)
+  // so, to reduce the time compexity we can use set visted instead of array visited
   if (visited.includes(node)) return false
   visited.push(node)
 
