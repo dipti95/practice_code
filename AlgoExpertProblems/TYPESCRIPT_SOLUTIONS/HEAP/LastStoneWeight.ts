@@ -76,3 +76,16 @@ function lastStoneWeight(stones: number[]): number {
 
   return heap.peek()
 }
+
+// recursive approch time complexity is higher than previous solution
+
+function lastStoneWeight(stones: number[]): number {
+  if (stones.length === 1) return stones[0]
+
+  stones.sort((a, b) => a - b)
+  let firstHeaviestStone = stones.pop()
+  let secondHeaviestStone = stones.pop()
+
+  stones.push(firstHeaviestStone - secondHeaviestStone)
+  return lastStoneWeight(stones)
+}
