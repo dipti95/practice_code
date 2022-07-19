@@ -10,7 +10,5 @@ function longestSubstringWithoutDuplication(string: string) {
     }
     if (substring.length < current.length) substring = current
   }
-  console.log(substring)
-
   return substring
 }
