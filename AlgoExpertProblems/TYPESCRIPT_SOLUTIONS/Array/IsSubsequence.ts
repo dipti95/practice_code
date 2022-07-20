@@ -12,3 +12,18 @@ function isSubsequence(s: string, t: string): boolean {
 
   return true
 }
+
+function isSubsequence(s: string, t: string): boolean {
+  //O(n) time
+  if (s.length > t.length) return false
+
+  let idx = 0
+
+  for (let i = 0; i < t.length; i++) {
+    if (t[i] === s[idx]) {
+      idx++
+    }
+  }
+
+  return idx >= s.length ? true : false
+}
