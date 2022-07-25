@@ -24,3 +24,29 @@ function trap(height: number[]): number {
 
   return result
 }
+
+// O(n)time  , O(1) space
+function trap(height: number[]): number {
+  let left: number = 0
+  let right: number = height.length - 1
+  let maxLeft: number = 0
+  let maxRight: number = 0
+  let result: number = 0
+
+  while (left <= right) {
+    maxLeft = Math.max(height[left], maxLeft)
+    maxRight = Math.max(height[right], maxRight)
+    if (maxRight < maxLeft) {
+      let waterTrap = maxRight - height[right]
+      if (Math.sign(waterTrap) !== -1) result += waterTrap
+
+      right--
+    } else {
+      let waterTrap = maxLeft - height[left]
+      if (Math.sign(waterTrap) !== -1) result += waterTrap
+      left++
+    }
+  }
+
+  return result
+}
