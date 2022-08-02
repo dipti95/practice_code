@@ -1,14 +1,14 @@
 function longestCommonPrefix(strs: string[]): string {
   if (strs == null || strs.length == 0) return ""
-  let l = 1
-  let r = Infinity
+  let l: number = 1
+  let r: number = Infinity
 
   for (const ele of strs) {
     r = Math.min(r, ele.length)
   }
 
   while (l <= r) {
-    let mid = Math.floor((l + r) / 2)
+    let mid: number = Math.floor((l + r) / 2)
 
     if (checkIfPrefix(strs, mid)) {
       l = mid + 1
