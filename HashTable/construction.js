@@ -1,5 +1,6 @@
 class HashTable {
   constructor(size) {
+    // size is the array length
     this.data = new Array(size)
     // this.data = [];
   }
