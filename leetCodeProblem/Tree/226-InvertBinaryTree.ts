@@ -25,3 +25,22 @@ function invertTree(root: TreeNode | null): TreeNode | null {
 
   return root
 }
+
+// using queue
+function invertTree(root: TreeNode | null): TreeNode | null {
+  let queue: Array<TreeNode | null> = [root]
+
+  while (queue.length !== 0) {
+    let node = queue.shift()
+    if (node === null) continue
+
+    queue.push(node.left)
+    queue.push(node.right)
+
+    let temp = node.left
+    node.left = node.right
+    node.right = temp
+  }
+
+  return root
+}
