@@ -25,7 +25,7 @@ function invertTree(root: TreeNode | null): TreeNode | null {
 
   return root
 }
-
+//Iterative solution
 // using queue
 function invertTree(root: TreeNode | null): TreeNode | null {
   let queue: Array<TreeNode | null> = [root]
