@@ -20,3 +20,27 @@ function dfs(root) {
 
   return maxHeight + 1
 }
+
+//Using bfs without recursion
+function maxDepth(root: TreeNode | null): number {
+  if (!root) return 0
+
+  let depth = 0
+
+  let queue = [root]
+
+  while (queue.length > 0) {
+    let len = queue.length
+
+    for (let i = 0; i < len; i++) {
+      let node = queue.shift()
+
+      if (node.left) queue.push(node.left)
+      if (node.right) queue.push(node.right)
+    }
+
+    depth++
+  }
+
+  return depth
+}
