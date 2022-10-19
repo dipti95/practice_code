@@ -17,6 +17,7 @@ export function maxPathSum(tree: BinaryTree) {
 }
 
 function maxPathSumHelper(tree: BinaryTree | null) {
+  //-Infinity because maxPathSum can be negative
   if (tree === null) return [0, -Infinity]
 
   const [leftMaxSumBranch, leftMaxSum] = maxPathSumHelper(tree.left)
