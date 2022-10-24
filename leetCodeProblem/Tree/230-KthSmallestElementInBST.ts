@@ -26,3 +26,23 @@ function bfs(node: TreeNode | null, arr: number[]) {
 
   return arr
 }
+
+//Iterative solution
+function kthSmallest(root: TreeNode | null, k: number): number {
+  let n = 0
+  let stack: TreeNode[] = []
+
+  let current = root
+
+  while (current || stack.length) {
+    while (current) {
+      stack.push(current)
+      current = current.left
+    }
+    current = stack.pop()
+    n += 1
+    if (n === k) return current.val
+
+    current = current.right
+  }
+}
