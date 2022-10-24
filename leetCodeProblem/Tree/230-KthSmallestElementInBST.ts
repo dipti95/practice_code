@@ -9,7 +9,7 @@ class TreeNode {
     this.right = right === undefined ? null : right
   }
 }
-
+//  recursive solution
 function kthSmallest(root: TreeNode | null, k: number): number {
   let res: number[] = []
   bfs(root, res)
