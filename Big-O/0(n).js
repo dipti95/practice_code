@@ -1,3 +1,5 @@
+//Time complexity
+
 function anotherFunChallenge(input) {
   let a = 5 //O(1)
   let b = 10 //O(1)
