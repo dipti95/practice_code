@@ -8,7 +8,7 @@ function moveElementToEnd(array, toMove) {
       idx--
     }
   }
-  //console.log(array)
+
   return array
 }
 
