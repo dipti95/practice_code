@@ -1,11 +1,12 @@
 function getPara(arr, width) {
   let res = []
+  res.push("*".repeat(width))
 
   for (let para of arr) {
     let str = para.join(" ")
     res = helper(str, res, width)
   }
-
+  res.push("*".repeat(width))
   return res
 }
 
@@ -18,7 +19,8 @@ function helper(str, res, width) {
       let ele = cur.pop()
       dummy.unshift(ele)
     }
-    res.push("*" + cur.join(" ") + "*")
+    //res.push("*" + + "*")
+    helper(cur.join(" "), res, width)
     helper(dummy.join(" "), res, width)
   } else if (str.length < width) {
     res = secondHelper(str, res, width)
@@ -28,18 +30,19 @@ function helper(str, res, width) {
 }
 
 function secondHelper(str, res, width) {
-  if ((str.length - width) % 2 === 0) {
+  if ((width - str.length) % 2 === 0) {
     let current = ""
-    for (let i = 1; i <= Math.floor(str.length / 2); i++) {
+    for (let i = 1; i <= Math.floor((width - str.length) / 2); i++) {
       current += " "
     }
 
     res.push("*" + current + str + current + "*")
   } else {
     let current = ""
-    for (let i = 1; i <= Math.floor(str.length / 2); i++) {
+    for (let i = 1; i <= Math.floor((width - str.length) / 2); i++) {
       current += " "
     }
+
     res.push("*" + current + str + current + " *")
   }
 
